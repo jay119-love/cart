@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>스마트미러 가상 피팅</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>가상 피팅</h1>
+      <div class="spacer"></div>
+      <div class="actions-row">
+        <button id="btn-reset" class="btn secondary" title="초기화">초기화</button>
+        <button id="btn-export" class="btn primary" title="PNG로 저장">PNG 저장</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <aside class="sidebar">
+        <section class="panel">
+          <h2>사진 업로드</h2>
+          <label class="file-input">
+            <input id="input-user" type="file" accept="image/*" />
+            <span>사용자 사진 선택</span>
+          </label>
+          <label class="file-input">
+            <input id="input-cloth" type="file" accept="image/*" />
+            <span>의상 사진 선택 (PNG 권장)</span>
+          </label>
+        </section>
+
+        <section class="panel">
+          <h2>의상 조정</h2>
+          <div class="control">
+            <label for="range-scale">크기</label>
+            <input id="range-scale" type="range" min="0.1" max="3" step="0.01" value="1" />
+          </div>
+          <div class="control">
+            <label for="range-rotate">회전</label>
+            <input id="range-rotate" type="range" min="-180" max="180" step="1" value="0" />
+          </div>
+          <div class="hint">의상을 드래그하여 이동, 휠로도 크기 조절 가능</div>
+        </section>
+
+        <section class="panel">
+          <h2>배경</h2>
+          <div class="control">
+            <label class="checkbox">
+              <input id="chk-mirror" type="checkbox" checked />
+              <span>미러 모드 (좌우 반전)</span>
+            </label>
+          </div>
+          <div class="control">
+            <label for="bg-color">배경색 (사진 없을 때)</label>
+            <input id="bg-color" type="color" value="#111111" />
+          </div>
+        </section>
+      </aside>
+
+      <section class="stage-wrap">
+        <canvas id="stage" width="1080" height="1920" aria-label="미리보기 캔버스"></canvas>
+        <div class="overlay-help">드래그: 이동 • 휠: 확대/축소</div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>© 2025 MiraX Virtual Fitting</small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
+
