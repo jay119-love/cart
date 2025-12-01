@@ -1,0 +1,92 @@
+/* 전체 배경 */
+body {
+    margin: 0;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  
+  /* 아이폰 화면비 */
+  .iphone-wrapper {
+    position: relative;
+    width: 430px;     /* iPhone 14 Pro Max 기준 */
+    height: 932px;
+    border-radius: 42px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0,0,0,0.6);
+  }
+  
+  /* 오로라 애니메이션 배경 (은은한 퍼플/블루) */
+  .aurora-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, #7f5bff 0%, transparent 60%),
+      radial-gradient(circle at 80% 70%, #3fa7ff 0%, transparent 60%),
+      radial-gradient(circle at 50% 10%, #9b5bff 0%, transparent 60%);
+    filter: blur(60px);
+    opacity: 0.92;
+    animation: auroraMove 18s ease-in-out infinite alternate;
+  }
+  
+  /* 오로라 움직임 */
+  @keyframes auroraMove {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+      opacity: 0.85;
+    }
+    50% {
+      transform: translate(-30px, 40px) scale(1.15);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(40px, -20px) scale(1.1);
+      opacity: 0.9;
+    }
+  }
+  
+  /* 아이폰 프레임 */
+  .iphone-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.25);
+  }
+  
+  /* 앱 콘텐츠 */
+  .app-content {
+    position: absolute;
+    inset: 0;
+    padding: 18px;
+    padding-top: 28px;
+    color: white;
+    overflow-y: auto;
+  }
+  
+  /* 제목 */
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  /* 상품 3그리드 */
+  .cart-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .empty {
+    grid-column: 1 / 4;
+    text-align: center;
+    opacity: 0.75;
+    font-size: 14px;
+  }
+  
