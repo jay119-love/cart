@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>Smart Mirror Cart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="iphone-wrapper">
+    <div class="aurora-bg"></div>
+
+    <div class="iphone-frame">
+      <div class="app-content">
+        <h1>내 코디 담기</h1>
+
+        <!-- 장바구니 리스트 -->
+        <section id="cartList" class="cart-grid">
+          <p id="emptyMsg" class="empty">옷을 스캔하면 여기에 담겨요.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- 상품 팝업 -->
+  <div id="itemModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-img-area">
+        <div class="img-placeholder">IMAGE</div>
+      </div>
+
+      <h2 id="modalName"></h2>
+      <p id="modalDesc"></p>
+
+      <label for="sizeSelect">사이즈</label>
+      <select id="sizeSelect"></select>
+
+      <label for="colorSelect">컬러</label>
+      <select id="colorSelect"></select>
+
+      <div class="modal-actions">
+        <button id="changeBtn" class="sub-btn">옵션 바꾸기</button>
+        <button id="addBtn" class="main-btn">담기</button>
+      </div>
+
+      <button id="closeModal" class="close">×</button>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
